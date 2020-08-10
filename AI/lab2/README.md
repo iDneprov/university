@@ -23,7 +23,7 @@ execution time: 0.8632041454315186
 Метрики алгоритма в моем исполнении:  
 precision: 0.910410482046418  
 recall: 0.909  
-train accuracy: 0.916  
+train accuracy: 0.916   
 test accuracy: 0.909  
 execution time: 0.5756097316741944  
 
