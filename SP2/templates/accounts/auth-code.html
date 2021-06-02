@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Ваш ключ для генирации временных кодов
+{% endblock %}
+
+{% block content %}
+
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+           <img src="{% static qrcode %}" width="200" height="200" class="card-img" alt="auth-code">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Поздравляю вас с успешной регистрацией!</h5>
+            <p class="card-text">{{ auth_code }}<br>Это ваш ключ для генирации временных паролей, добавьте его в Google Authenticator.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

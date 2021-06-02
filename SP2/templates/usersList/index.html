@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Список пользователей
+{% endblock %}
+
+{% block menu %}
+          <a class="nav-item nav-link active" href="/users/">Пользователи <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="/login/">Вход</a>
+          <a class="nav-item nav-link" href="/register/">Регистрация</a>
+{% endblock %}
+
+{% block content %}
+    <h1 class="mb-5">Список email пользователей:</h1>
+    <ul class="list-group">
+        {% for user in users %}
+            <li class="list-group-item{% if user.email == active_user.email %} active{% endif %}">{{ user.email }}  {# user.auth_code #}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

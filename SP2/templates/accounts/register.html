@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Регистрация
+{% endblock %}
+
+{% block menu %}
+          <a class="nav-item nav-link" href="/users/">Пользователи <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="/login/">Вход</a>
+          <a class="nav-item nav-link active" href="/register/">Регистрация</a>
+{% endblock %}
+
+{% block content %}
+  <form class="form-signin" action="" method="post">
+      <h1 class="h3 mb-3 font-weight-normal">Зарегистрируйтесь</h1>
+
+      {% csrf_token %}
+
+      {% for field in form %}
+          <div class="form-group">
+            {% if field.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+            {# if field.label != 'Auth code' #}
+                {{ field.label }}
+                {{ field }}
+            {# endif #}
+          </div>
+      {% endfor %}
+
+      <button type="submit" class="btn btn-dark">Зарегистрироваться</button>
+</form>
+{% endblock %}
+
